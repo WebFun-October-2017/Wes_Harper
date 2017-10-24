@@ -9,8 +9,24 @@ $(document).ready(function() {
 		console.log(query);
 		var queryUrl = basePeopleUrl + "/?search=" + query + "&format=json";
 
-		$.get(queryUrl, function(response) {
-			$("#results").html(response);
-		});
+		// $.get(queryUrl, function(people) {
+		// 	console.log(people.results[0]);
+		// 	var person = people.results[0];
+		// 	var result = `<h3>${person.name}</h3>`;
+		// 	result += ``
+		// }, 'json');
+
+		$.ajax({
+			url: queryUrl,
+			type: "GET",
+			crossDomain = true,
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(xhr, status) {
+				console.log(xhr, status);
+			}
+		})
+		return false;
 	});
 });
