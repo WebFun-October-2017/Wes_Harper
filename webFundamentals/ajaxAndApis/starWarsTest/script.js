@@ -21,15 +21,17 @@ $(document).ready(function() {
 			// save first result in returned query list
 			var person = people.results[0];
 			// create resulting html
-			var result = `<div class="person">`;
-			result += `<h3>${person.name}</h3>`;
-			result += `<p>Hair Color: ${person.hair_color}</p>`;
-			result += `<p>Eye Color: ${person.eye_color}</p>`;
-			result += `<p>Skin Color: ${person.skin_color}</p>`;
-			result += `<p>Height: ${person.height}cm</p>`;
-			result += `<p>Gender: ${person.gender}</p>`;
-			result += `<a href='${person.homeworld}'>View Homeworld Info</a>`;
-			result += `</div>`;
+			var result = `
+				<div class="person">
+					<h3>${person.name}</h3>
+					<p>Hair Color: ${person.hair_color}</p>
+					<p>Eye Color: ${person.eye_color}</p>
+					<p>Skin Color: ${person.skin_color}</p>
+					<p>Height: ${person.height}cm</p>
+					<p>Gender: ${person.gender}</p>
+					<a href='${person.homeworld}'>View Homeworld Info</a>
+				</div
+			`
 			// append html to results div
 			$("#results").append(result);
 		}, 'json');
@@ -63,9 +65,12 @@ $(document).ready(function() {
 		$.get(homeworldQueryUrl, function(home) {
 			// console.log(home);
 			// create resulting html
-			var result = `<div class="homeworld">`;
-			result += `<h4>${home.name}</h4>`;
-			result += `<p>Climate: ${home.climate}</p>`;
+			var result = `
+				<div class="homeworld">
+					<h4>${home.name}</h4>
+					<p>Climate: ${home.climate}</p>
+				</div>
+			`
 			// append html to desired element
 			that.append(result);
 		});
