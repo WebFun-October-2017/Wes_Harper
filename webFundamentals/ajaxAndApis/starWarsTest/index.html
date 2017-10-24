@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star Wars!</title>
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<h1>Look up your favorite Star Wars character!</h1>
+	<form id='name_form' action='http://swapi.co/api/people' method='post'>
+		<input type="text" name="name">
+		<input type="submit" value="Find Character">
+	</form>
+	<div id="results"></div>
+</body>
+</html>
