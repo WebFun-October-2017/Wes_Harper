@@ -1,0 +1,9 @@
+.person {
+	display: inline-block;
+	vertical-align: top;
+	width: 23%;
+}
+
+.person li {
+	font-size: 16pt;
+}
